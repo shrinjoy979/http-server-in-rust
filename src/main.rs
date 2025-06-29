@@ -36,7 +36,7 @@ async fn get_balance(query: Query<BalancyQuery>) -> Json<serde_json::Value> {
 async fn main() {
     let app = Router::new().route("/", get(get_balance));
 
-    let address = SocketAddr::from(([127, 0, 0, 1], 3000));
+    let address = SocketAddr::from(([0, 0, 0, 0], 8080));
     println!("Axum server is running on http://{}", address);
 
     let listener = TcpListener::bind(address).await.unwrap();
